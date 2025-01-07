@@ -1,0 +1,37 @@
+$bp: (
+    mobile : 400px,
+    tablet: 768px,
+    desktop: 1440px,
+ );
+
+ @mixin query($screen){
+    @each $key, $value in $bp{
+        @if ($screen == $key){
+            @media (max-width: $value){@content;}
+        }
+    }
+ }
+//  @include query(mobile){
+
+//  } 
+ *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    body{
+        font-family: sans-serif;
+        font-size: 30px;
+    }
+ }
+
+  [class ^="box-"]{
+    display: grid;
+    place-items: center;
+  }
+  .container{
+    display: grid;
+    height: 100vh;
+    grid-template-areas:
+    "a a a a a a a a a a a a";
+    grid-gap: 10px;
+  }

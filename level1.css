@@ -1,0 +1,22 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+* body {
+  font-family: sans-serif;
+  font-size: 30px;
+}
+
+[class^=box-] {
+  display: grid;
+  place-items: center;
+  border: 10px solid red;
+}
+
+.container {
+  display: grid;
+  height: 100vh;
+  grid-template-rows: auto 1fr auto;
+  grid-gap: 10px;
+}/*# sourceMappingURL=level1.css.map */

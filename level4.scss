@@ -32,11 +32,12 @@ $bp: (
   .container{
     display: grid;
     height: 100vh;
-    grid-template-areas:
-    "a a a a  a a a a  a a a a"
-    "b b b b  b b b b  c c c c "
-    "b b b b  b b b b  c c c c ";
     grid-gap: 10px;
+    grid-template-areas: 
+    "a a a a  a a a a  a a a a"
+    "b b b b  b b b b  e e e e"
+    "c c c c  d d d d  e e e e"
+    "e e e e  e e e e  e e e e";
   }
   .box-1{
     grid-area: a;
@@ -47,12 +48,20 @@ $bp: (
   .box-3{
     grid-area: c;
   }
+  .box-4{
+    grid-area: d;
+  }
+  .box-5{
+    grid-area: e;
+  }
+
   @include query(mobile){
     .container{
-      grid-template-areas:
-      "a a a a  a a a a  a a a a"
-      "b b b b  b b b b  b b b b"
-      "b b b b  b b b b  b b b b "
-      "c c c c  c c c c  c c c c ";
+        grid-template-areas: 
+        "a a a a  a a a a  a a a a"
+        "b b b b  b b b b  b b b b"
+        "b b b b  b b b b  b b b b"
+        "c c c c  c c d d  d d d d"
+        "e e e e  e e e e  e e e e";
     }
 }

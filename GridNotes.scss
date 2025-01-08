@@ -1,0 +1,100 @@
+//Grid Chapters
+// Parent Properties
+//first lets select everything in with the universal operator and style the body and everything
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+};
+body {
+    font-family: sans-serif;
+    font-size: 40px;
+    width: 100%;
+    min-height: 100vh;
+}
+//then add the [class^="icon] which indicates the icon or the class you're working on, 
+//here we're going to work on the boxes (its everything with that specific name of boxes or starts with the box name)
+
+[class^="box-"] {
+    display: grid;
+    place-items: center;
+    border: 10px solid red;
+    background-color: skyblue;
+}
+//specify that container or main class name, the one holding the boxes under it.
+.container {
+    display:grid;
+    gap: 20px;
+    grid-template-columns: 100px 300px auto;
+    grid-template-rows: 100px 300px auto;
+    //you can continue ajusting the pixels as you want up to the egde you want to reach on.
+    grid-template-areas: "a a a a  a a a a  a a a a"
+                         "b b b b  b b b b  b b c c"
+                         "b b b b  b b b b  b b c c";
+    grid-template: 100px 200px/ 200px 400px;    
+    //or
+    grid-template: repeat(2,1fr)/ repeat(2,1fr);  
+    //you can use this grid-template alone instead of grid-template-column or the grid-template-rows 
+    justify-items: left;       
+    // justify-items: right; or //stretch
+    // justify-items: center;  
+    justify-content: center; 
+    align-items: start;   
+    align-content: center;    
+    place-content: space-between;
+}
+.box-1{
+  grid-area: a;
+  grid-column-start: 1;
+  grid-column-end: 12;
+  //or
+  //grid-column: 1/ 13 you can use this at once instead of the above.
+  //here you specify it where you want to start and where the
+  //expanding ends.
+  grid-row-start: 1;
+  grid-row-end: 13;
+  //or use this at once
+  grid-row: 1/13;
+  justify-self: right; //it goes on the y axis
+//   left or center;
+  align-self: start; //it goes on the x axis
+  //left , center and stretch.
+  place-self: end; //this place the items so small at the top
+  //start and stretch
+
+}
+.box-2{
+    grid-area: b;
+  }
+  .box-3{
+    grid-area:c;
+  }
+//Grid Architecture: its columns and rows
+//example: if have grid-template-columns: 200px auto 100px (it means you have 3 columns)
+//this means you have 3 elements you placing into those ranges.
+//or you can you use repeat(3,1fr)
+//you add them in the container
+
+//grid-template-areas
+//it is like the blue print of the structure of your elements, then you specify down on each box the letter its being represented
+
+//grid-template:
+// here you use the slash to specify way to place them using the slash
+
+//grid-gap and gap is the same
+
+//justify-items, here the items go to the left when you put left
+//justify-content, here the whole content goes all together either left,right or center but the justify-items only the left items are ones that shifts.
+
+//align-items, here the items align to the top when you put (start), right, center they go in their position as well
+//when you put (stretch) it becomes whole.
+
+//align-content, here the content goes as space-between, space-around space-evenly
+//but you can also use the start, end and stretch
+
+//justify-items:center and align-items: center, the items become small in the center
+
+//place-content: you can use it and then you don't use the align-items or align-content or justify-items and justify-content
+
+//  Children Properties
+//justify-self: start; if it is in that specific box, it is the one that is shifts to the small size left and end the same, it goes to right, and the center.
